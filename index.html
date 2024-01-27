@@ -37,12 +37,36 @@
         }
 
         #uploadMedia {
-            width: 70%;
+            width: 69%;
             height: 60vh;
             margin: auto;
             background-color: lightgray; /* Just for visualization, you can remove this */
             float: left;
         }
+
+        #imginp{
+            display: none;
+            
+        }
+
+      
+
+        label {
+            float: left;
+            border-radius: 6px;
+            border: 6px dashed #999;
+            padding: 245px 570px;
+           
+
+
+        }
+
+        label:hover {
+            color: #de0611;
+            border: 1px dashed #de0611
+        }
+
+
 
         main {
             padding: 20px;
@@ -104,13 +128,14 @@
         <!-- Media content goes here -->
         <div id="uploadMedia">
             <!-- Your photo or video upload content goes here -->
-            <label for="mediaInput">Add Photo or Video:</label>
-            <input type="file" id="mediaInput" accept="image/*, video/*">
+            <input type="file" id="imginp" name="file">
+            <label for="imginp" >Add Photo or Video:</label>
+            
         </div>
 
         <div id = "ScoreBoard">
             <h2>Top 5 Players</h2>
-        <table>
+        <table> 
             <thead>
                 <tr>
                     <th>Player</th>
