@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsChannel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #headline {
+            width: 70%;
+            padding: 0.5em;
+            box-sizing: border-box;
+            font-size: 1.5em;
+        }
+
+        #channelName {
+            width: 20%;
+            padding: 0.5em;
+            box-sizing: border-box;
+            font-size: 1.5em;
+        }
+
+        #uploadMedia {
+            width: 70%;
+            height: 60vh;
+            margin: auto;
+            background-color: lightgray; /* Just for visualization, you can remove this */
+            float: left;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #Description {
+          width: 68%;
+          border: 0;
+          outline: none;
+          background: #262626;
+          padding: 15px;
+          margin: 15px 0;
+          color:#fff;
+          font-size: 18px;
+          border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <input type="text" id="headline" placeholder="Enter headline">
+        <input type="text" id="channelName" placeholder="Channel Name">
+    </header>
+
+    <main>
+        <!-- Media content goes here -->
+        <div id="uploadMedia">
+            <!-- Your photo or video upload content goes here -->
+            <label for="mediaInput">Add Photo or Video:</label>
+            <input type="file" id="mediaInput" accept="image/*, video/*">
+        </div>
+
+        <!-- More news articles go here -->
+
+        <textarea id="Description" rows="6" placeholder="Your Description"></textarea>
+    </main>
+
+    <footer>
+        &copy; 2024 NewsChannel. No rights reserved.
+    </footer>
+
+</body>
+
+</html>
