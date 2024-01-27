@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewsChannel</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -17,13 +19,21 @@
 
     <main>
         <!-- Media content goes here -->
-        <div id="uploadMedia">
+        <div class = "center">
             <!-- Your photo or video upload content goes here -->
-            <input type="file" id="imginp" name="file">
-            <label for="imginp">Add Photo or Video:</label>
+            <div class="form-input">
+
+                <label for="file-ip-1">Upload Photo / Video:</label>
+                <input type="file" id=" " accept="image/*" onchange="showPreview(event);">
+
+                <div class="preview">
+                    <img id="file-ip-1-preview" >
+                </div>
+                
+            </div>
         </div>
 
-        <div id="ScoreBoard">
+        <!-- <div id="ScoreBoard">
             <h2>Top 5 Players</h2>
             <table>
                 <thead>
@@ -55,41 +65,21 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
 
         <!-- More news articles go here -->
-
+    
+        
         <textarea id="Description" rows="6" placeholder="Your Description"></textarea>
         <button type="button" class="btn" onclick="submitForm()">Submit</button>
+        
+        
         <div id="submittedContent"></div>
     </main>
 
-    <footer>
-        &copy; 2024 NewsChannel. No rights reserved.
-    </footer>
-
-    <script>
-        function submitForm() {
-            // Get user inputs
-            var channelName = document.getElementById('channelName').value;
-            var headline = document.getElementById('headline').value;
-            var userImage = document.getElementById('imginp').files[0];
-            var description = document.getElementById('Description').value;
-    
-            // Create URL parameters
-            var url = `submittednews.html?channelName=${encodeURIComponent(channelName)}&headline=${encodeURIComponent(headline)}&description=${encodeURIComponent(description)}`;
-    
-            // Add userImage to URL if provided
-            if (userImage) {
-                var imageUrl = URL.createObjectURL(userImage);
-                url += `&userImage=${encodeURIComponent(imageUrl)}`;
-            }
-    
-            // Redirect to the submitted news page
-            window.location.href = url;
-        }
-    </script>
-    
 </body>
+<footer>
+    &copy; 2024 NewsChannel. No rights reserved.
+</footer>
 
 </html>
