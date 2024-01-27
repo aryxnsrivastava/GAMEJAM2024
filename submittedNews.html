@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted News - NewsChannel</title>
+    <!-- Link the common stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+   
+</head>
+
+<body>
+
+    <header>
+        <h1>Submitted News</h1>
+    </header>
+
+    <main>
+        <!-- Container for displaying submitted content -->
+        <div id="submittedContent"></div>
+    </main>
+
+    <footer>
+        &copy; 2024 NewsChannel. No rights reserved.
+    </footer>
+
+    <script>
+        // Function to parse and display submitted content from URL parameters
+        function displaySubmittedContent() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const channelName = urlParams.get('channelName');
+            const headline = urlParams.get('headline');
+            const description = urlParams.get('description');
+            const userImage = urlParams.get('userImage');
+
+            // Create HTML to display submitted content
+            var submittedContentHTML = `
+                <h2>Submitted Content</h2>
+                <p><strong>Channel Name:</strong> ${channelName}</p>
+                <p><strong>Headline:</strong> ${headline}</p>
+                <p><strong>Description:</strong> ${description}</p>
+            `;
+
+            // Display user's photo/video if provided
+            if (userImage) {
+                submittedContentHTML += `
+                    <p><strong>Photo/Video:</strong> <img src="${userImage}" alt="User Media"></p>
+                `;
+            }
+
+            // Display the submitted content
+            document.getElementById('submittedContent').innerHTML = submittedContentHTML;
+        }
+
+        // Call the function when the page loads
+        window.onload = displaySubmittedContent;
+        
+        // Optionally, you can also call the function immediately after the script loads
+        displaySubmittedContent();
+    </script>
+</body>
+
+</html>
