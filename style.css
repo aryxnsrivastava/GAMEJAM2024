@@ -53,6 +53,7 @@ header {
     text-align: center;
     padding: 1em;
     display: flex;
+    border: black;
     justify-content: space-between;
     align-items: center;
 }
@@ -62,8 +63,8 @@ header {
     padding: 0.5em;
     box-sizing: border-box;
     font-size: 1.5em;
-    border: none;
-    background: transparent;
+    border: black;
+    background: black;
     color: #fff;
 }
 
@@ -73,7 +74,7 @@ header {
     box-sizing: border-box;
     font-size: 1.5em;
     border: none;
-    background: transparent;
+    background: black;
     color: #fff;
 }
 
