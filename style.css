@@ -93,11 +93,7 @@ footer {
     margin-bottom: 10px; /* Add some spacing between the textarea and the button */
     outline: none;
     background: #262626;
-    padding: 15px;
-    margin: 15px 0;
     color: #fff;
-    font-size: 20px;
-    border-radius: 6px;
 }
 
 #ScoreBoard {
