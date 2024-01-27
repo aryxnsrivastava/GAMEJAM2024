@@ -116,7 +116,7 @@ footer {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
-    transition: background 0.3s, transform 0.3s;
+    transition: transform 0.3s;
     background: linear-gradient(45deg, #4b6cb7, #182848); /* Gradient blue background */
     cursor: pointer;
     overflow: hidden;
