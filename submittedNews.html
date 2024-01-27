@@ -5,21 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submitted News - NewsChannel</title>
-    <!-- Link the common stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
-   
 </head>
 
 <body>
 
     <header>
-        <h1>Submitted News</h1>
+        <p><strong></strong> <span id="headline"></span></p>
+        <p><strong></strong> <span id="channelName"></span></p>
+        
     </header>
 
     <main>
-        <!-- Container for displaying submitted content -->
-        <div id="submittedContent"></div>
+        <div id="uploadMedia">
+            <!-- Display the user's photo/video if provided -->
+            <img id="userMedia" src="" alt="User Media">
+        </div>
+
+
+        <div id="Description">
+    
+           
+            <p><strong>Description:</strong> <span id="description"></span></p>
+        </div>
     </main>
 
     <footer>
@@ -29,31 +37,27 @@
     <script>
         // Function to parse and display submitted content from URL parameters
         function displaySubmittedContent() {
-            // Get URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const channelName = urlParams.get('channelName');
-            const headline = urlParams.get('headline');
-            const description = urlParams.get('description');
-            const userImage = urlParams.get('userImage');
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const channelName = urlParams.get('channelName');
+    const headline = urlParams.get('headline');
+    const description = urlParams.get('description');
+    const userImage = urlParams.get('userImage');
 
-            // Create HTML to display submitted content
-            var submittedContentHTML = `
-                <h2>Submitted Content</h2>
-                <p><strong>Channel Name:</strong> ${channelName}</p>
-                <p><strong>Headline:</strong> ${headline}</p>
-                <p><strong>Description:</strong> ${description}</p>
-            `;
+    // Log the userImage value to the console
+    console.log('User Image:', userImage);
 
-            // Display user's photo/video if provided
-            if (userImage) {
-                submittedContentHTML += `
-                    <p><strong>Photo/Video:</strong> <img src="${userImage}" alt="User Media"></p>
-                `;
-            }
+    // Display user's photo/video if provided
+    if (userImage) {
+        document.getElementById('userMedia').src = userImage;
+    }
 
-            // Display the submitted content
-            document.getElementById('submittedContent').innerHTML = submittedContentHTML;
-        }
+    // Display submitted content in the Description section
+    document.getElementById('channelName').innerText = channelName;
+    document.getElementById('headline').innerText = headline;
+    document.getElementById('description').innerText = description;
+}
+
 
         // Call the function when the page loads
         window.onload = displaySubmittedContent;
