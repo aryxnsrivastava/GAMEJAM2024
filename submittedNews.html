@@ -11,14 +11,17 @@
 <body>
 
     <header>
-        <p><strong></strong> <span id="headline"></span></p>
-        <p><strong></strong> <span id="channelName"></span></p>
+        <p><strong>Headline:</strong> <span id="headline"></span></p>
+        <p><strong>Channel:</strong> <span id="channelName"></span></p>
     </header>
 
     <main>
         <div id="uploadMedia">
-            <!-- Display the user's photo/video if provided -->
-            <img id="userMedia" src="" alt="User Media">
+            <!-- Display the user's photo or video if provided -->
+            <img id="userPhoto" src="" alt="User Photo">
+            <video id="userVideo" controls muted>
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <div id="Description">
@@ -38,14 +41,18 @@
             const channelName = urlParams.get('channelName');
             const headline = urlParams.get('headline');
             const description = urlParams.get('description');
-            const userImage = urlParams.get('userImage');
+            const photoUrl = urlParams.get('photoUrl');
+            const videoUrl = urlParams.get('videoUrl');
 
-            // Log the userImage value to the console
-            console.log('User Image:', userImage);
+            // Display user's photo or video if provided
+            if (photoUrl) {
+                document.getElementById('userPhoto').src = photoUrl;
+                document.getElementById('userPhoto').style.display = 'block';
+            }
 
-            // Display user's photo/video if provided
-            if (userImage) {
-                document.getElementById('userMedia').src = userImage;
+            if (videoUrl) {
+                document.getElementById('userVideo').src = videoUrl;
+                document.getElementById('userVideo').style.display = 'block';
             }
 
             // Display submitted content in the Description section
@@ -62,4 +69,4 @@
     </script>
 </body>
 
-</html> 
+</html>
