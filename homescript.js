@@ -7,32 +7,32 @@ var howButton = document.getElementById('how-button');
 var textElement = document.getElementById('text-overlay2');
 
 imageContainer1.addEventListener('mouseover', function() {
-    howButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Hover.png';
+    howButton.src = 'buttons/Hover.png';
     textElement.style.opacity = 0.5; // Set opacity to half
 });
 
 imageContainer1.addEventListener('mouseout', function() {
-    howButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Normal.png';
+    howButton.src = 'buttons/Normal.png';
     textElement.style.opacity = 1; // Set opacity back to full
 });
 
 imageContainer2.addEventListener('mouseover', function() {
-    startButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Hover.png';
+    startButton.src = 'buttons/Hover.png';
     textElement.style.opacity = 0.5; // Set opacity to half
 });
 
 imageContainer2.addEventListener('mouseout', function() {
-    startButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Normal.png';
+    startButton.src = 'buttons/Normal.png';
     textElement.style.opacity = 1; // Set opacity back to full
 });
 
 imageContainer3.addEventListener('mouseover', function() {
-    aboutButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Hover.png';
+    aboutButton.src = 'buttons/Hover.png';
     textElement.style.opacity = 0.5; // Set opacity to half
 });
 
 imageContainer3.addEventListener('mouseout', function() {
-    aboutButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Normal.png';
+    aboutButton.src = 'buttons/Normal.png';
     textElement.style.opacity = 1; // Set opacity back to full
 });
 
@@ -49,15 +49,15 @@ function handleClick(buttonNumber) {
     var button = document.querySelector('.button' + buttonNumber);
     // Change the image source
     if (buttonNumber == 1){
-        howButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Clicked.png';
+        howButton.src = 'buttons/Clicked.png';
     }
 
     else if (buttonNumber == 2){
-        startButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Clicked.png';
+        startButton.src = 'buttons/Clicked.png';
     }
 
     else if (buttonNumber == 3){
-        aboutButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Clicked.png';
+        aboutButton.src = 'buttons/Clicked.png';
     }
     // After a delay (adjust the delay time accordingly), navigate to the intended webpage
     setTimeout(function() {
