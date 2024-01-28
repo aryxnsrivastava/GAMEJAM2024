@@ -65,15 +65,26 @@ body {
   width: 200px;
   font-size: 18px;
   padding: 10px;
-  align-content: center;
-  
-  background: #de0b0b;
-  color: #060404;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Adjust the gradient colors */
+  color: #fef6f6;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
 }
 
 #myBtn:hover {
-  background: #ddd;
+  background: linear-gradient(to right, #feb47b, #ff7e5f); /* Adjust the hover gradient colors */
   color: black;
+}
+
+#instagram {
+  height: 42px;
+  /* You can add additional styles if needed, such as setting a background color or adjusting padding */
+}
+
+#git{
+  background-color: #fff;
+  border-radius: 6px;
+  height: 40px;
 }
 

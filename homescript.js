@@ -7,32 +7,32 @@ var howButton = document.getElementById('how-button');
 var textElement = document.getElementById('text-overlay2');
 
 imageContainer1.addEventListener('mouseover', function() {
-    howButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Hover.png';
+    howButton.src = 'buttons/Hover.png';
     textElement.style.opacity = 0.5; // Set opacity to half
 });
 
 imageContainer1.addEventListener('mouseout', function() {
-    howButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Normal.png';
+    howButton.src = 'buttons/Normal.png';
     textElement.style.opacity = 1; // Set opacity back to full
 });
 
 imageContainer2.addEventListener('mouseover', function() {
-    startButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Hover.png';
+    startButton.src = 'buttons/Hover.png';
     textElement.style.opacity = 0.5; // Set opacity to half
 });
 
 imageContainer2.addEventListener('mouseout', function() {
-    startButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Normal.png';
+    startButton.src = 'buttons/Normal.png';
     textElement.style.opacity = 1; // Set opacity back to full
 });
 
 imageContainer3.addEventListener('mouseover', function() {
-    aboutButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Hover.png';
+    aboutButton.src = 'buttons/Hover.png';
     textElement.style.opacity = 0.5; // Set opacity to half
 });
 
 imageContainer3.addEventListener('mouseout', function() {
-    aboutButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Normal.png';
+    aboutButton.src = 'buttons/Normal.png';
     textElement.style.opacity = 1; // Set opacity back to full
 });
 
@@ -66,7 +66,6 @@ function handleClick(buttonNumber) {
         setTimeout(function() {
             window.location.href = 'about.html';
         }, 1000); // 1000 milliseconds (1 second) delay
-    }
 
     // After a delay (adjust the delay time accordingly), navigate to the intended webpage
     
@@ -91,4 +90,5 @@ function handleClick(buttonNumber) {
             window.location.href = 'about.html';
         }, 1000); // 1000 milliseconds (1 second) delay
     }   */   
+    }
 }

@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewsChannel</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
+    <link rel="stylesheet" href="howToPlay.css">
+    <title>Fixed Video Background</title>
 </head>
-
 <body>
+    <!-- Video Background -->
+    <video id="video-background" autoplay muted loop>
+        <source src="Background/futuristic_-_105446 (Original).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <header>
-        <input type="text" id="headline" placeholder="Enter headline">
-        <input type="text" id="channelName" placeholder="Channel Name">
-    </header>
-
-    <main>
-        <!-- Media content goes here -->
-        <div class = "center">
-            <!-- Your photo or video upload content goes here -->
-            <div class="form-input">
-
-                <label for="file-ip-1">Upload Photo / Video:</label>
-                <input type="file" id="file-ip-1" accept="image/*, video/*" onchange="showPreview(event);">
-
-                <div class="preview">
-                    <img id="file-ip-1-preview" >
-                </div>
-                
-            </div>
-        </div>
+    <!-- Content -->
+    <h2><b> Fill out the following slots </b></h2>
+    <div id="content">
+        <form action="your_server_endpoint_here" method="post">
+            <label for="input1">HeadLine:   </label>
+            <input type="text" id="input1" name="Headline" required>
         
-        <textarea id="Description" rows="6" placeholder="Your Description"></textarea>
-        <button type="button" class="btn" onclick="submitForm()">Submit</button>
+            <br>
         
+            <label for="input2">Channel Name:</label>
+            <input type="text" id="input2" name="ChannelName" required>
         
-        <div id="submittedContent"></div>
-    </main>
+            <br>
+        
+            <label for="input3">Description: </label>
+            <input type="text" id="input3" name="Description" required>
+        
+            <br>
+        
+            <label for="input4">Youtube Link:</label>
+            <input type="text" id="input4" name="YoutubeLink" required>
+        
+            <br>
+          </form>
+    </div>
 
+    <!-- Buttons -->
+    <div class="buttons">
+        <button class="back-button"><a href = "" >Back</a></button>
+        <button class="play-button"><a href = "" >Submit</a></button>
+    </div>
 </body>
-<footer>
-    &copy; 2024 NewsChannel. No rights reserved.
-</footer>
-
 </html>
