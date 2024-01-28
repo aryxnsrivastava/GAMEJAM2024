@@ -19,56 +19,35 @@
 
     <main>
         <!-- Media content goes here -->
-        <div class = "center">
-            <!-- Your photo or video upload content goes here -->
-            <div class="form-input">
-
-                <label for="file-ip-1">Upload Photo / Video:</label>
-                <input type="file" id=" " accept="image/*" onchange="showPreview(event);">
-
-                <div class="preview">
-                    <img id="file-ip-1-preview" >
-                </div>
-                
+        <div class="center">
+            <!-- Photo upload section -->
+            <div class="form-input" id="photo-section">
+                <label for="file-ip-1" class="file-label">
+                <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+                Upload Photo:
+                    <img id="file-ip-1-preview" class="preview-img" alt="Preview Image">
+                    
+                </label>
             </div>
+
+            
+            <!-- Video upload section -->
+<div class="form-input" id="video-section">
+    <label for="file-ip-2" class="file-label">
+        <input type="file" id="file-ip-2" accept="video/*" onchange="showVideoPreview(event);">
+        Upload Video:
+        <div class="preview">
+            <video id="file-ip-2-preview" class="preview-video" controls muted>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </label>
+</div>
+
+
         </div>
 
-        <!-- <div id="ScoreBoard">
-            <h2>Top 5 Players</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Player 1</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>Player 2</td>
-                        <td>85</td>
-                    </tr>
-                    <tr>
-                        <td>Player 3</td>
-                        <td>72</td>
-                    </tr>
-                    <tr>
-                        <td>Player 4</td>
-                        <td>65</td>
-                    </tr>
-                    <tr>
-                        <td>Player 5</td>
-                        <td>55</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
-
-        <!-- More news articles go here -->
-    
+        <hr> 
         
         <textarea id="Description" rows="6" placeholder="Your Description"></textarea>
         <button type="button" class="btn" onclick="submitForm()">Submit</button>

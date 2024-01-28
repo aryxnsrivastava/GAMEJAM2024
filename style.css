@@ -1,57 +1,58 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
+    overflow: hidden; /* Disable vertical scrolling */
 }
 
 .center {
-    height: 100%;
     display: flex;
-    align-items: left;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-.form-input{
-    width: 250px;
+form-input {
+    width: 100%;
     padding: 20px;
     background-color: #fff;
     border: 2px dashed #555;
+    text-align: center;
 }
 
-.form-input input{
+.form-input input {
     display: none;
 }
 
-.form-input label{
-
+.form-input label {
     display: block;
     width: 100%;
-    height: 50px;
+    height: 40px;
     line-height: 50px;
-    text-align: center;
-    background:#333;
+    background: #333;
     color: #fff;
-    font-size: 15px;
-    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
-    border-radius: 10px;
     cursor: pointer;
-
 }
 
-.form-input img{
+.form-input img {
     width: 100%;
     display: none;
-
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 header {
-    background-color: #333;
+    background-color: #262626;
     color: #fff;
     text-align: center;
     padding: 1em;
     display: flex;
+    border: black;
     justify-content: space-between;
     align-items: center;
 }
@@ -61,6 +62,9 @@ header {
     padding: 0.5em;
     box-sizing: border-box;
     font-size: 1.5em;
+    border: black;
+    background: black;
+    color: #fff;
 }
 
 #channelName {
@@ -68,13 +72,16 @@ header {
     padding: 0.5em;
     box-sizing: border-box;
     font-size: 1.5em;
+    border: none;
+    background: black;
+    color: #fff;
 }
-
-
 
 main {
     padding: 20px;
-    background-color: #3F1651
+    background-color: black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflowing content */
 }
 
 footer {
@@ -89,40 +96,188 @@ footer {
 
 #Description {
     display: block;
-    width: 60%; /* Make the textarea take the full width */
-    margin-bottom: 10px; /* Add some spacing between the textarea and the button */
+    width: 100%; 
+    margin-top: -360px;
+    margin-left: -15px;
+    margin-bottom: 5px;
     outline: none;
-    background: #262626;
+    background: #f3f4ea;
+    color: #333;
     padding: 15px;
-    margin: 15px 0;
+    border: 2px solid #fe30a5;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+#Description:hover {
+    background: #fe30a5;
     color: #fff;
-    font-size: 20px;
-    border-radius: 6px;
 }
 
-#ScoreBoard {
-    
-    background-color: lightcoral;
-    text-align: right;
-    
+#Description:focus {
+    border: 2px solid #121212;
 }
 
 .btn {
-    width: 28%;
-    display: block;
-    border: 1px solid #ff004f;
-    padding: 14px 0px;
-    border-radius: 6px;
+    width: 100%;
+    height:55px;
+    display: inline-block;
+    border: none;
     text-decoration: none;
-    color: #fff;
-    transition: background 0.5s;
-    background: #ff004f;
+    color: black;
+    font-size: 18px;
+    transition: transform 0.3s;
+    background: linear-gradient(45deg, #fff, #fff); /* Gradient blue background */
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
+
+.btn:hover {
+    background: linear-gradient(45deg, #fe30a5, #fe30a5); /* Maintain the same gradient on hover */
+    transform: scale(1.05);
+    color: black;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #a28089, #ffa8B6);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    color: black;
+}
+
+.btn:hover::before {
+    transform: translateX(100%);
+    color: #060606;
+}
+#photo-section,
+#video-section {
+    width: 100%;
+    height:360px;
+    margin-top: -680px;
+    margin-bottom: -318px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px dashed #555;
+    text-align: center;
+    
+}
+.preview {
+    margin-top: 10px;
+}
+
+
+#photo-section label,
+#video-section label {
+    height: 370px;
+    line-height: 370px; /* Adjusted line-height to vertically center the text */
+    background: #f3f4ea;
+    color: #121212;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#photo-section label:hover {
+    background: #ffe926;
+    color: #4f050f;
+}
+
+#photo-section img {
+    max-width: 100%; 
+    max-height: 100%; 
+    display: none;
+    border-radius: 8px;
+}
+
+
+.file-label {
+    position: relative;
+    height: 370px;
+    background: #f3f4ea;
+    color: #121212;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image is fully visible within the container */
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Bring the image to the foreground */
+}
+
+#photo-section img {
+    display: none;
+}
+
+
+#video-section label {
+    height: 100%;
+    background: #f3f4ea;
+    color: #121212;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s;
+}
+
+#video-section label:hover {
+    background: #ffe926;
+    color: #4f050f;
+}
+
+#video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    display: none;
+}
+
+#video-section video.show {
+    display: block;
+}
+
 
 #submittedContent {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 6px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #333;
 }
