@@ -20,23 +20,22 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(251, 255, 0, 0.604); /* Translucent white background */
+    background: linear-gradient(to bottom,rgba(63, 94, 251, 0.600) 0%, rgba(252,70,107,0.600) 100%); /* Gradient from green to yellow */
     padding: 10px;
     border-radius: 10px;
     max-width: 600px;
     width: 100%;
     text-align: center;
-    color: #fff;
+    color: black;
     z-index: 1;
     font-size: 25px;
 }
 
 h2 {
-    background-color: rgba(251, 255, 0, 0.604); /* Translucent white background */
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    color: black;
+    color: white;
     margin-top: 50px;
     font-size: 20px;
 }
