@@ -1,5 +1,4 @@
 
-
 function showPreview(event){
     if(event.target.files.length > 0){
         var src = URL.createObjectURL(event.target.files[0]);
@@ -8,28 +7,6 @@ function showPreview(event){
         preview.style.display = "block";
     }
 }
-function showVideoPreview(event) {
-    const videoPreview = document.getElementById('file-ip-2-preview');
-    const fileInput = event.target;
-    const file = fileInput.files[0];
-
-    if (file) {
-        const videoURL = URL.createObjectURL(file);
-
-        // Set the video source
-        videoPreview.src = videoURL;
-
-        // Ensure the video is loaded before setting the display property
-        videoPreview.onloadedmetadata = function () {
-            videoPreview.style.display = 'block';
-            videoPreview.play(); // Start playing the video
-        };
-    } else {
-        videoPreview.style.display = 'none';
-    }
-}
-
-
 
 function submitForm() {
     // Get user inputs
