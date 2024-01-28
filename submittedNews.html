@@ -11,20 +11,13 @@
 
 <body>
 
-    <div class="background">
-        <video autoplay loop muted>
-            <source src="/Users/anshdeepbhachoo/GAMEJAM2024/vid/television.mp4">
-        </video>
-
     <header>
         <p><strong></strong> <span id="headline"></span></p>
         <p><strong></strong> <div id="channelName"></div></p>
     </header>
 
     <main>
-        <div id="uploadMedia">
-            <!-- Display the user's photo/video if provided -->
-            <img id="userMedia" src="" alt="User Media">
+        <div id="youtubeVideo" style="text-align: center; margin-top: 20px;">
         </div>
 
         <div id="Description">
@@ -50,22 +43,42 @@ function typeEffect() {
     }
 }
 
-// Function to parse and display submitted content from URL parameters
 function displaySubmittedContent() {
     // Retrieve user inputs from local storage
     const channelName = localStorage.getItem('channelName');
     const headline = localStorage.getItem('headline');
     const description = localStorage.getItem('description');
+    const youtubeLink = localStorage.getItem('youtubeLink');
 
     // Log the description text to the console
     console.log('Description Text:', description);
 
-    // Display submitted content in the Description section
-    document.getElementById('channelName').innerText = channelName || ''; // Handle null or undefined values
-    document.getElementById('headline').innerText = headline || ''; // Handle null or undefined values
-    document.getElementById('description').innerText = description || ''; // Handle null or undefined values
+    // Display submitted content in the respective sections
+    document.getElementById('channelName').innerText = channelName || '';
+    document.getElementById('headline').innerText = headline || '';
+    document.getElementById('description').innerText = description || '';
+
+    // Display YouTube video
+    const youtubeVideoElement = document.getElementById('youtubeVideo');
+    if (youtubeLink) {
+        // Extract the video ID from the YouTube link
+        const videoId = extractVideoId(youtubeLink);
+        
+        // Create and set the iframe HTML
+        const iframeHtml = `<iframe width="480" height="405" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+        youtubeVideoElement.innerHTML = iframeHtml;
+    } else {
+        youtubeVideoElement.innerHTML = ''; // Clear the content if link is not provided
+    }
 
     typeEffect(); // Call your typeEffect function if needed
+}
+
+// Function to extract the video ID from a YouTube link
+function extractVideoId(link) {
+    const videoIdRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = link.match(videoIdRegex);
+    return match ? match[1] : null;
 }
 
 // Call the function when the page loads
@@ -75,14 +88,10 @@ window.onload = displaySubmittedContent;
 displaySubmittedContent();
 
 
-// Call the function when the page loads
-window.onload = displaySubmittedContent;
 
-// Optionally, you can also call the function immediately after the script loads
-displaySubmittedContent();
-    </script>
+</script>
     
     
 </body>
 
-</html>
+</html> 
