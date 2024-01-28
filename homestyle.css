@@ -77,6 +77,15 @@ video {
     /* You can add additional styling as needed */
 }
 
-
+.header {
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=3f3f3f&c2=3a3a3a&gt=l&gd=dtl
+*/
+background: #3F3F3F;
+background: linear-gradient(135deg, #3F3F3F, #3A3A3A);
+padding: 0;
+margin: 0;
+}
 
 

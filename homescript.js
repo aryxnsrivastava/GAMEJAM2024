@@ -46,21 +46,49 @@ textElement.addEventListener('mouseleave', function() {
 
 function handleClick(buttonNumber) {
     // Play a click sound (adjust the sound file path accordingly)
-    var button = document.querySelector('.button' + buttonNumber);
     // Change the image source
     if (buttonNumber == 1){
         howButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Clicked.png';
+        setTimeout(function () {
+            window.location.href = 'howToPlay.html';
+        }, 1000); // 1000 milliseconds (1 second) delay
     }
 
     else if (buttonNumber == 2){
         startButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Clicked.png';
+        setTimeout(function () {
+            window.location.href = 'index.html';
+        }, 1000); // 1000 milliseconds (1 second) delay
     }
 
     else if (buttonNumber == 3){
         aboutButton.src = '/Users/anshdeepbhachoo/GAMEJAM2024/buttons/Clicked.png';
+        setTimeout(function() {
+            window.location.href = 'about.html';
+        }, 1000); // 1000 milliseconds (1 second) delay
     }
+
     // After a delay (adjust the delay time accordingly), navigate to the intended webpage
-    setTimeout(function() {
-        window.location.href = 'index.html';
+    
+    //link 1
+    
+    /*if (buttonNumber === 1){
+    setTimeout(function () {
+        window.location.href = 'howToPlay.html';
     }, 1000); // 1000 milliseconds (1 second) delay
+    }
+
+    //link 2
+    else if (buttonNumber === 2){
+        setTimeout(function () {
+            window.location.href = 'index.html';
+        }, 1000); // 1000 milliseconds (1 second) delay
+    }  
+
+    //link 3
+    else if (buttonNumber === 3){
+        setTimeout(function() {
+            window.location.href = 'about.html';
+        }, 1000); // 1000 milliseconds (1 second) delay
+    }   */   
 }
