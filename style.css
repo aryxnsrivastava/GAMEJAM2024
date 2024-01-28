@@ -173,8 +173,7 @@ footer {
 }
 
 
-#photo-section label,
-#video-section label {
+#photo-section label {
     height: 370px;
     line-height: 370px; /* Adjusted line-height to vertically center the text */
     background: #f3f4ea;
@@ -264,7 +263,7 @@ footer {
 #video-section video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 8px;
     display: none;
 }
