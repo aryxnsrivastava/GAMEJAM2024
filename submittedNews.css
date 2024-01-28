@@ -15,7 +15,7 @@ video {
 }
 
 header{
-    background: black;
+    background: #e06377;
     color: #fff;
     text-align: center;
     padding: 1em;
@@ -96,33 +96,13 @@ footer {
     width: 100%;
     border: 0;
     outline: none;
-    background: #262626;
+    background: #618685;
     padding: 15px;
     margin: 15px 0;
     color: #fff;
     font-size: 20px;
     border-radius: 6px;
 }
-header p {
-    white-space: nowrap; /* Prevent the headline from wrapping to the next line */
-    overflow: hidden; /* Hide the overflowed content */
-}
-
-header span {
-    display: inline-block;
-    animation: scrollHeadline 8s linear infinite; /* Adjust the animation duration as needed */
-}
-
-@keyframes scrollHeadline {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-170%);
-    }
-}
-
-
 
 
 #submittedContent {
