@@ -1,50 +1,52 @@
-// Function to handle form submission
-function submitForm() {
-    // Get values from the form
-    const channelName = document.getElementById('channelName').value;
-    const headline = document.getElementById('headline').value;
-    const description = document.getElementById('Description').value;
 
-    // Get photo URL
-    const photoUrl = document.getElementById('file-ip-1-preview').src;
 
-    // Get video URL
-    const videoUrl = document.getElementById('file-ip-2-preview').src;
-
-    // Construct the URL for submittedNews.html with parameters
-    const submittedNewsUrl = `submittedNews.html?channelName=${encodeURIComponent(channelName)}&headline=${encodeURIComponent(headline)}&description=${encodeURIComponent(description)}&photoUrl=${encodeURIComponent(photoUrl)}&videoUrl=${encodeURIComponent(videoUrl)}`;
-
-    // Redirect to submittedNews.html with parameters
-    window.location.href = submittedNewsUrl;
-}
-
-// Function to display a preview of the selected photo
-function showPreview(event) {
-    const input = event.target;
-    const preview = document.getElementById('file-ip-1-preview');
-    const file = input.files[0];
-
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            preview.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
+function showPreview(event){
+    if(event.target.files.length > 0){
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("file-ip-1-preview");
+        preview.src = src;
+        preview.style.display = "block";
     }
 }
-
-// Function to display a preview of the selected video
 function showVideoPreview(event) {
-    const input = event.target;
-    const preview = document.getElementById('file-ip-2-preview');
-    const file = input.files[0];
+    const videoPreview = document.getElementById('file-ip-2-preview');
+    const fileInput = event.target;
+    const file = fileInput.files[0];
 
     if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            preview.src = e.target.result;
-            preview.classList.add('show'); // Show the video preview element
+        const videoURL = URL.createObjectURL(file);
+
+        // Set the video source
+        videoPreview.src = videoURL;
+
+        // Ensure the video is loaded before setting the display property
+        videoPreview.onloadedmetadata = function () {
+            videoPreview.style.display = 'block';
+            videoPreview.play(); // Start playing the video
         };
-        reader.readAsDataURL(file);
+    } else {
+        videoPreview.style.display = 'none';
     }
+}
+
+
+
+function submitForm() {
+    // Get user inputs
+    var channelName = document.getElementById('channelName').value;
+    var headline = document.getElementById('headline').value;
+    var userImage = document.getElementById('file-ip-1').files[0];
+    var description = document.getElementById('Description').value;
+
+    // Create URL parameters
+    var url = `submittednews.html?channelName=${encodeURIComponent(channelName)}&headline=${encodeURIComponent(headline)}&description=${encodeURIComponent(description)}`;
+
+    // Add userImage to URL if provided
+    if (userImage) {
+        var imageUrl = URL.createObjectURL(userImage);
+        url += `&userImage=${encodeURIComponent(imageUrl)}`;
+    }
+
+    // Redirect to the submitted news page
+    window.location.href = url;
 }
